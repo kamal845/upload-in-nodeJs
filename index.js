@@ -7,25 +7,26 @@ app.set("views", path.resolve("./views"));
 app.use(express.urlencoded({ extended: false }));
 port = 4000;
 const connectDB = require("./database/connectDB");
-
+// const upload=multer({dest:'upload/'});
 app.get("/", (req, res) => {
   res.render("index2");
-});
-//for file upload
-app.post("/upload", (req, res) => {
-  res.send("file upload");
 });
 //
 const upload = multer({
   storage: multer.diskStorage({
-    destination: function (req, res, cb) {
-      cb(null, "/uploads");
+    destination: function (req, file, cb) {
+     return cb(null, "./uploads");
     },
-    filename: function (req, res, cb) {
-cb(null,file.fieldname + "-" + Date.now() + '.jpg')
+    filename: function (req, file, cb) {
+     return cb(null,`${Date.now()}-${file.originalname}`);
     }
   }),
 });
+//for file upload.agar ek file upload karni hai toh single aur agar many karni hai toh upload.array('profileImages', 3)
+app.post("/upload",upload.single('profileImage'), (req, res) => {
+    res.send("file upload");
+    return res.redirect('/');
+  });
 try {
   app.listen(port, (req, res) => {
     connectDB()
