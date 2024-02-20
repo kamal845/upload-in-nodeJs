@@ -1,24 +1,5 @@
-For docker help
-FROM node:latest
-
-# # Set the working directory inside the container
-# WORKDIR /app
-
-# Copy the contents of the local directory to the container at /app
-COPY . .
-
-# Verify npm cache
-RUN npm cache verify
-
-# Install dependencies
-RUN npm install --force
-
-# Expose port 4000
-EXPOSE 4000
-
-# Command to run your application
-CMD ["node", "index.js"]
-
-
-after this run COMMAND:-
-docker build -t "uploadbackendproject" .
+action=>kis url ke upar hame upload karna hai.
+enctype=>lagane se file upload hoti hai na lagane se upload nahi hoti.
+express.urlencoded=> ye express ka middleware hai(ye form data ko parse karne mai help karta hai).
+MIME->Multipurpose Internet Mail Extensions
+ye dekhta hai aane wali file pdf,image hai ya nahi agar hai toh aane dega other wise nahi aane dega
