@@ -1,24 +1,41 @@
-For docker help
-FROM node:latest
-
-# # Set the working directory inside the container
-# WORKDIR /app
-
-# Copy the contents of the local directory to the container at /app
-COPY . .
-
-# Verify npm cache
-RUN npm cache verify
-
-# Install dependencies
-RUN npm install --force
-
-# Expose port 4000
-EXPOSE 4000
-
-# Command to run your application
-CMD ["node", "index.js"]
+why need to learn docker:-
+portability
+isolation
+efficiency
+scalability
 
 
-after this run COMMAND:-
-docker build -t "uploadbackendproject" .
+Docker(language specific)(node js)
+--containerize your app
+--develop your app
+--Run your app
+--configure ci/Cd
+--test your deployment
+
+concepts to cover---
+(BASICS)--
+basics
+images
+containers
+how to make docker file deploy application.
+(INTERMEDIATE)--
+docker networking
+docker compose
+docker optimization
+docker security
+multi-stage builds
+healthchecks
+secret management
+container orchestration tools
+
+DOCKERHUB--(isse images download hoti hai),docker hub wali image ko parent image bolte hai.
+image ko pull karna aur image ko download karna same hai
+IMAGES--(they are template of project)
+container--(running instance of project.)
+dockerignore--(kon se file,module,package apko ignore karna hai woh daal sakte hai.isme mostly node module dalte hai)
+*.txt-- likhne se .dockerignore mai saari txt wali file ignore ho jayegi.
+volume-- ye data ko permanently store karne ke liye hota hai.
+compose--isme multi-commands add kar sakte hai.run kar sakte hai.
+
+
+

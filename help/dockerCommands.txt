@@ -1,0 +1,82 @@
+For docker help
+FROM node:latest
+
+# # Set the working directory inside the container
+# WORKDIR /app
+
+# Copy the contents of the local directory to the container at /app
+COPY . .
+
+# Verify npm cache
+RUN npm cache verify 
+
+# Install dependencies
+RUN npm install --force
+
+# Expose port 4000
+EXPOSE 4000
+
+# Command to run your application
+CMD ["node", "index.js"]
+
+
+after this run COMMAND:-
+docker build -t "uploadbackendproject" .
+
+
+
+COMMANDS--
+docker file create karne ke liye
+touch docker file
+-node ki photo ke liye 
+docker pull node(docker hub ke search se le sakte hai)
+-for run container in image
+docker run -it node/bin/bash
+-docker ignorefile create karne ke liye
+.dockerignore
+-for delete image
+docker image rm project_name
+-force ke saath image delete karne ke liye
+docker image run project_name
+-container and images deleteall karne ke liye
+docker system prune-a
+-image build ke liye
+docker build -t project_name
+-running project from docker
+docker run --name project_name -container-v2-p 5500:5500 project_name:v2
+
+
+
+In vs code terminal
+-npm i nodemon
+package.json mai scripts mai ,"dev":"nodemon index.js".
+for nodemon
+in docker file
+from node.latest
+RUN npm install -g nodemon
+.....
+.....
+.....
+CMD["npm,"run","dev"]
+
+
+
+docker run -name basic container-p 5500:5500 -- rm-v project_name :app fulldirectorynameofproject.
+filename->compse.yaml
+services:
+img:
+build:
+container-name:basic-container
+ports:
+-5500:5500
+run this file
+docker compose up
+
+to push a new tag in this repo
+docker push reponame:tagname
+docker pull reponame
+
+In vs code terminal
+docker buildx build -- platform linux/and 64-t project_name
+docker push project_name
+docker run-p 5500:5500 project_name

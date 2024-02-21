@@ -1,2 +1,3 @@
-dummy.txt
-*.txt
+# dummy.txt
+# *.txt,aisa karna se saari file txt wali ignore ho jayegi
+*.pdf
