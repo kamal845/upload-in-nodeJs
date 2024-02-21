@@ -1,3 +1,5 @@
 # dummy.txt
-# *.txt,aisa karna se saari file txt wali ignore ho jayegi
+# (*.txt,aisa karna se saari file txt wali ignore ho jayegi)
 *.pdf
+node_module
+# i am ignoring node_module 

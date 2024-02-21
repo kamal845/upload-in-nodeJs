@@ -1,11 +1,11 @@
 FROM node:latest
 
-# # Set the working directory inside the container
-# WORKDIR /app
+# Set the working directory inside the container
+WORKDIR /app
 
 # Copy the contents of the local directory to the container at /app
 COPY . .
-
+RUN npm install -g nodemon
 # Verify npm cache
 RUN npm cache verify
 

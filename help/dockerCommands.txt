@@ -26,25 +26,44 @@ docker build -t "uploadbackendproject" .
 
 
 COMMANDS--
-docker file create karne ke liye
+---docker file create karne ke liye
 touch docker file
--node ki photo ke liye 
+---node ki photo ke liye 
 docker pull node(docker hub ke search se le sakte hai)
--for run container in image
+---for run container in image
 docker run -it node/bin/bash
--docker ignorefile create karne ke liye
+---docker ignorefile create karne ke liye
 .dockerignore
--for delete image
-docker image rm project_name
--force ke saath image delete karne ke liye
-docker image run project_name
--container and images deleteall karne ke liye
+---for delete image
+docker image rm project_name-iron
+---force ke saath image delete karne ke liye
+docker image rm project_name -f
+---container and images deleteall karne ke liye
 docker system prune-a
--image build ke liye
+---image (banane)build ke liye
 docker build -t project_name
--running project from docker
+---sabhi container show ho uske liye
+docker ps -a
+---container delete karne ke liye
+docker container rm container_name
+---container delete karne ke liye force
+docker container rm container_name -f
+---running project from docker
 docker run --name project_name -container-v2-p 5500:5500 project_name:v2
+---to see all the images in vscode
+docker images 
+---for compose create file
+touch compose.yaml
+---for starting compose file
+docker compose up
 
+
+COMMAND TO UPLOAD PROJECT ON DOCKERHUB:-
+docker buildx build -t kk5738547/upload_project1 .
+docker login 
+//niche wali line change ho sakti hai.project ka name woh hai jo image auto generate hui hai latest uska version hai
+docker tag uploadproject-img:latest kk5738547/uploadproject-img:latest
+docker push kk5738547/uploadproject-img:latest
 
 
 In vs code terminal
